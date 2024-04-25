@@ -23,4 +23,9 @@ export class TaskController {
   public create(@Body() taskDTO:TaskDTO) {
     return this.taskService.create(taskDTO);
   }
+
+  @Get()
+  findAll(){
+    return this.taskService.findAll();
+  }
 }

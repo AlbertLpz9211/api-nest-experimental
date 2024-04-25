@@ -14,4 +14,7 @@ export class TaskService {
     this.tasks.push(task);
     return task;
   }
+  findAll(): ITask[]{
+    return this.tasks;
+  }
 }
