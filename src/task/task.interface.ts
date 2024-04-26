@@ -1,5 +1,5 @@
 export interface ITask{
-    id?: number;
+    id?: string;
     worker?: number;
     description: string;
     groupOfWork: string;

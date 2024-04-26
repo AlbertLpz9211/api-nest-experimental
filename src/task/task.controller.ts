@@ -28,4 +28,9 @@ export class TaskController {
   findAll(){
     return this.taskService.findAll();
   }
+
+  @Get(':id')
+  findById(@Param('id') id: string){
+    return this.taskService.findById(id);
+  }
 }
