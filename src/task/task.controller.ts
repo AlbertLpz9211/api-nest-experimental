@@ -33,4 +33,9 @@ export class TaskController {
   findById(@Param('id') id: string){
     return this.taskService.findById(id);
   }
+
+  @Put(':id')
+  updateById(@Param('id') id: string, @Body() taskDTO: TaskDTO){
+    return this.taskService.update(id, taskDTO)
+  }
 }

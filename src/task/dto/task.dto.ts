@@ -1,5 +1,5 @@
 export class TaskDTO {
-  id?: number;
+  id?: string;
   readonly worker?: number;
   readonly description: string;
   readonly groupOfWork: string;
