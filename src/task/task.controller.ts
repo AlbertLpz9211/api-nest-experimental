@@ -38,4 +38,9 @@ export class TaskController {
   updateById(@Param('id') id: string, @Body() taskDTO: TaskDTO){
     return this.taskService.update(id, taskDTO)
   }
+
+  @Delete(':id')
+  deleteById(@Param('id') id:string){
+    return this.taskService.delete(id);
+  }
 }
