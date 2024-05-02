@@ -1,6 +1,6 @@
 export interface ITask{
     id?: string;
-    worker?: number;
+    worker?: string;
     description: string;
     groupOfWork: string;
     owner: string;
