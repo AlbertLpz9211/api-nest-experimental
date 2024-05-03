@@ -18,32 +18,36 @@ import { TaskService } from './task.service';
 
 @Controller('api/v1/task')
 export class TaskController {
-
-  constructor (private readonly taskService: TaskService){}
+  constructor(private readonly taskService: TaskService) {}
 
   @Post()
   @UsePipes()
-  public create(@Body() taskDTO:TaskDTO) {
-    return this.taskService.create(taskDTO);
+  public createTask(@Body() taskDTO: TaskDTO) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject('error en la peticion');
+      }, 2000);
+    });
+    // return this.taskService.create(taskDTO);
   }
 
   @Get()
-  findAll(){
+  public findAll() {
     return this.taskService.findAll();
   }
 
   @Get(':id')
-  findById(@Param('id') id: string){
+  public findById(@Param('id') id: string) {
     return this.taskService.findById(id);
   }
 
   @Put(':id')
-  updateById(@Param('id') id: string, @Body() taskDTO: TaskDTO){
-    return this.taskService.update(id, taskDTO)
+  public updateById(@Param('id') id: string, @Body() taskDTO: TaskDTO) {
+    return this.taskService.update(id, taskDTO);
   }
 
   @Delete(':id')
-  deleteById(@Param('id') id:string){
+  public deleteById(@Param('id') id: string) {
     return this.taskService.delete(id);
   }
 }
