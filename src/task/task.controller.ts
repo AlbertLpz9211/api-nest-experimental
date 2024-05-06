@@ -21,7 +21,7 @@ export class TaskController {
   @Post()
   public createTaskService(@Body() taskDTO: TaskDTO) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => reject('error en la Peticion'), 2000);
+      setTimeout(() => reject('something was worng!'), 180000);
     });
     // return this.taskService.createTask(taskDTO);
   }
